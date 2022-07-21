@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Any
+from functools import wraps
 
 
 class curried:
@@ -21,4 +22,11 @@ class curried:
 
     def reset(self):
         self.given_args = []
+
+
+def curry(f):
+    @wraps(f)
+    def decorated(*args):
+        return curried(f)(*args)
+    return decorated
 

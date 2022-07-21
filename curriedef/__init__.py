@@ -1,2 +1,2 @@
-from .curry import curried
+from .curry import curried, curry
 
