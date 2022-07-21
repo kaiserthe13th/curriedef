@@ -61,6 +61,10 @@ class curried:
         ret.given_args = ga
         return ret
 
+    def uncurry(self) -> function:
+        """Uncurries function by returning the underlying function"""
+        return self.f
+
     def reset(self):
         """Removes partial application by removing all previously applied arguments."""
         self.given_args = []
